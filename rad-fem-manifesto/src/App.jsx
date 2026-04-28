@@ -56,23 +56,23 @@ const sources = [
 const issues = [
   {
     num: "01",
-    title: "Forced & Coerced Marriage",
-    body: "Coercion need not be physical to be real. Faisal et al. (2026) found that even highly educated women—doctors and medical students—face marital pressures that structurally constrain their professional and personal autonomy worldwide. The penalties for non-compliance are social, economic, and familial. That is coercion."
+    title: "The Pornography Industry",
+    body: "Wright finds connections to violence towards women through porn stating \"These acts dehumanize women into instruments used for pleasure\" (Wright, 5). This violence being so easily spread across the modern internet will only serve as a way to further normalize the objectification of women in the modern world. "
   },
   {
     num: "02",
-    title: "Internalized Gender Roles",
-    body: "Sonkaya & Öcal (2024) demonstrate that patriarchal marriage norms are actively reproduced through socialization. Young people internalize gendered expectations about who should marry, when, and on what terms—making coercion feel like choice. The system sustains itself by making its own constraints invisible."
+    title: "Oversexualization of Women",
+    body: "The amount of sexualization women face within their life is disgustingly high, this has only continued to increase in recent years. Cava did research on this trend going on to talk about how this objectification has been brought onto increasingly younger women stating \"If in the past sexual objectivation mainly referred to young women, in the last few years even female children are represented in an increasingly sexualised way.\" (Cava, 4). No civilized country should continue this trend."
   },
   {
     num: "03",
-    title: "The Pornography Industry",
-    body: "Wright (2017) traces the same objectifying logic across beauty pageants, media, and pornography: all reduce women to their physical and sexual utility. Cava (2024) documents how this logic has escaped the adult industry entirely—migrating into music, advertising, and youth media, normalizing the eroticization of girls."
+    title: "Internalized Gender Roles",
+    body: "Sonkaya & Öcal found that gender roles learned from our society and culture greatly shapes ones attitudes towards marriage (Sonkaya & Öcal). Women continue to show more egalitarian perspectives and it's time for those views to be thrust into our society. Marriage should be the choice of the individuals involved, not a societal expectation that is reinforced through socialization."
   },
   {
     num: "04",
-    title: "Legal & Cultural Reform",
-    body: "Both crises demand structural response. Criminalizing coercive marriage means nothing without economic safety nets for women who face community pressure. Regulating pornography means nothing without challenging the cultural normalization Wright and Cava document. Law and culture must move together."
+    title: "Forced & Coerced Marriage",
+    body: "Coercion does not need to be physical to be real. Faisal and the researchers alongside them found that even highly educated women in the medical field face marital pressures. This only stifles their growth, the study found that these pressures got brought into their work leading to lower career advancement (Faisal et al.). We can't continue to allow women to have their lives worsened simply because of what society expects of them."
   }
 ];
 
@@ -88,10 +88,13 @@ export default function Manifesto() {
   const revealRefs = useRef([]);
   revealRefs.current = []; // Reset the array on each render
 
+  // Helper function to add refs to the array
   const addRef = (el) => {
     if (el) revealRefs.current.push(el);
   };
+  // Intersection Observer for scroll reveal animations
   useEffect(() => {
+    // Create an Intersection Observer to add 'visible' class when elements come into view
     const observer = new IntersectionObserver(
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
       { threshold: 0.1 }
@@ -100,6 +103,7 @@ export default function Manifesto() {
     return () => observer.disconnect();
   }, []);
 
+  // Marquee content (the scrolling section) repeated to create a seamless scrolling effect
   const marqueeContent = Array(8).fill(null).map((_, i) => (
     <span key={i}>
       BODILY AUTONOMY NOW <span className="marquee-sep" />
@@ -118,6 +122,7 @@ export default function Manifesto() {
           <li><a href="#thesis">Thesis</a></li>
           <li><a href="#demands">Demands</a></li>
           <li><a href="#issues">Issues</a></li>
+          <li><a href="#statement">Statement</a></li>
           <li><a href="#sources">Sources</a></li>
         </ul>
       </nav>
@@ -136,7 +141,8 @@ export default function Manifesto() {
             <span className="line-red">CHAINS</span>
           </h1>
           <p className="hero-subtitle">
-            Sexual exploitation—through forced marriage and pornography—is not a private matter. It is a political instrument of patriarchal control. The time for polite discourse is over.
+            Sexual exploitation through forced marriage and pornography is not a private matter. It is a political instrument of 
+            patriarchal control. The time for polite discourse is over.
           </p>
           <div className="hero-cta-row">
             <a href="#thesis" className="btn-primary"><span>Read the Manifesto</span></a>
@@ -173,9 +179,12 @@ export default function Manifesto() {
             <h2 className="thesis-heading">THE LENS OF RADICAL FEMINISM</h2>
           </div>
           <div className="thesis-body scroll-reveal" ref={addRef}>
-            <p><strong>Radical feminism does not ask politely.</strong> It interrogates the root of women's oppression — the patriarchy as a totalizing system — not merely its symptoms. Through this lens, forced marriage and pornography are not edge cases. They are the system working as designed.</p>
-            <p>Coercion in marriage operates far beyond overt force. Faisal et al. (2026) studied female doctors and medical students globally and found that marital pressures impose <strong>structural constraints on women's autonomy</strong> regardless of educational achievement — proving coercion is a class-crossing phenomenon encoded in culture, not just circumstance.</p>
-            <p>Sonkaya & Öcal (2024) show how these norms are reproduced: young people actively internalize patriarchal expectations about marriage, making structural coercion feel like personal desire. Meanwhile, Wright (2017) connects the sexual objectification of women across media, pageantry, and pornography into a single coherent logic. Cava (2024) traces that logic into children's media — <strong>the eroticization of girls as normalized culture</strong>. This is not coincidence. It is a system.</p>
+            <p><strong>Radical feminism does not ask politely.</strong> It serves as an excellent lens to expose how sexual exploitation, 
+            both by forced marriage (either through arranged marriage or societal pressure), and pornography, has served as tools to reinforce the patriarchy. </p> 
+            <p>Society <strong>must</strong> fight back against the commodification of women’s bodies and systemic inequality faced by them within our modern society. We must work 
+            against the structures that society has given power to that have normalized these abuses and then work to enact meaningful cultural and legal reform 
+            in order to achieve true bodily autonomy. </p>  
+            <p>Around the world women have suffered ath the hands of the patriarchy, <strong>its time for real change.</strong></p>        
           </div>
         </div>
       </section>
@@ -204,7 +213,7 @@ export default function Manifesto() {
         </div>
       </section>
 
-            {/* ISSUE CARDS */}
+      {/* ISSUE CARDS */}
       <section className="issues" id="issues">
         <div className="container">
           <p className="section-eyebrow" style={{ color: 'rgba(255, 255, 255, 0.45)' }}>03 — Issues</p>
@@ -234,9 +243,15 @@ export default function Manifesto() {
             <h2 className="thesis-heading">WHY THIS FORM</h2>
           </div>
           <div className="thesis-body scroll-reveal" ref={addRef}>
-            <p>This manifesto takes the form of an interactive webpage deliberately. A traditional paper performs its argument in a closed space — between writer and reader, on a page that goes nowhere. A webpage is a public declaration. It exists in the same environment where pornographic culture proliferates, where marriage pressure is applied through social media, where norms are made and remade daily.</p>
-            <p>The aesthetic choices are not decorative. The diagonal slashes, the red-on-black palette, the aggressive typography — these are the visual language of urgency, of interruption, of refusal to be polite. Radical feminism, as theorized by writers like Dworkin and MacKinnon and grounded here in the research of Wright (2017), Cava (2024), Faisal et al. (2026), and Sonkaya & Öcal (2024), is not a polite tradition. It names systems. It makes demands. The form should match the argument.</p>
-            <p><strong>The personal is political.</strong> So is the design.</p>
+            <p>This manifesto takes the form of an interactive webpage deliberately. A traditional paper performs its argument in a 
+              closed space between writer and reader. A public webpage allows millions of people to see it simultaneously compared to a 
+              reading which only a handful of people may read. It exists in the same environment where porn is widely spread and publicly
+              available, where marriage pressure is applied through social media, where millions of women are harassed daily.</p>
+            <p>The design is intentional too. This isn't a plain paper with little to no thought put into the appearance. The colors, the
+              layout, the animations, all of it is meant to evoke a strong energy, like a <strong>call to action</strong>. It's meant to 
+              invoke a sense of urgency, we want the reader to feel the weight of all the topics covered in this manifesto.
+            </p>
+            <p><strong>Radical Feminism is political.</strong> So is the design.</p>
           </div>
         </div>
       </section>
@@ -265,7 +280,7 @@ export default function Manifesto() {
       {/* FOOTER */}
       <footer>
         <div className="footer-logo">RADI<span>CAL</span> MANIFESTO</div>
-        <p className="footer-note">Bodily Autonomy Is Non-Negotiable · 2025</p>
+        <p className="footer-note">Bodily Autonomy Is Non-Negotiable · 2026</p>
       </footer>
     </>
   );
