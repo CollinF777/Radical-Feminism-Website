@@ -440,7 +440,7 @@ nav::before {
   position: absolute;
   top: 0;
   right: -5%;
-  width: 40%;
+  width: 52%;
   height: 100%;
   background: var(--off-black);
   transform: skewX(var(--skew));
@@ -451,7 +451,7 @@ nav::before {
   content: '';
   position: absolute;
   top: 0;
-  right: calc(40% - 30px);
+  right: calc(52% - 30px);
   width: 4px;
   height: 100%;
   background: var(--red);
@@ -518,6 +518,7 @@ nav::before {
   font-weight: 400;
   line-height: 1.55;
   color: var(--cream);
+  grid-column: 2;
 }
 
 .thesis-body p + p {
@@ -594,7 +595,6 @@ nav::before {
   background: var(--gray);
   position: relative;
   overflow: hidden;
-  cursor: crosshair;
   transition: background 0.2s;
   transform: skewX(var(--skew));
   transform-origin: bottom left;
