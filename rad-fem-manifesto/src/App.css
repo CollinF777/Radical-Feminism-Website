@@ -35,7 +35,6 @@ body {
   color: var(--white);
   font-family: 'Barlow Condensed', sans-serif;
   overflow-x: hidden;
-  cursor: crosshair;
   display: block;
 }
 
@@ -97,10 +96,6 @@ nav::before {
   text-decoration: none;
   position: relative;
   z-index: 1;
-}
-
-.nav-logo span {
-  color: var(--red);
 }
 
 .nav-links {
@@ -345,7 +340,7 @@ nav::before {
 
 .marquee-inner {
   display: inline-block;
-  animation: marquee 55s linear infinite;
+  animation: marquee 90s linear infinite;
   white-space: nowrap;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 17px;

@@ -117,7 +117,7 @@ export default function Manifesto() {
     <>
       {/* NAV */}
       <nav>
-        <a href="#hero" className="nav-logo">RADI<span>CAL</span></a>
+        <a href="#hero" className="nav-logo">RADICAL</a>
         <ul className="nav-links">
           <li><a href="#thesis">Thesis</a></li>
           <li><a href="#demands">Demands</a></li>
@@ -279,7 +279,7 @@ export default function Manifesto() {
 
       {/* FOOTER */}
       <footer>
-        <div className="footer-logo">RADI<span>CAL</span> MANIFESTO</div>
+        <div className="footer-logo">RADICAL MANIFESTO</div>
         <p className="footer-note">Bodily Autonomy Is Non-Negotiable · 2026</p>
       </footer>
     </>
